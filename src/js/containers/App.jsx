@@ -4,7 +4,8 @@ import Orders from "../components/Orders.jsx";
 
 
 const App = () => {
-    console.log(store.getState());
+    const orders = store.getState();
+    console.log(orders)
     return(
         <Orders />
     )
