@@ -1,11 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from './containers/App.jsx';
+import { BrowserRouter } from "react-router-dom";
 
 {
     const init = () => {
-        console.log('start');
-        ReactDOM.render(<App />, document.body.querySelector(`.react`));
+        ReactDOM.render(
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+            , document.body.querySelector(`.react`)
+        );
     }
 
     init();

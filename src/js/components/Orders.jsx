@@ -1,9 +1,16 @@
 import React from "react";
 import Order from "./Order.jsx";
 
-const Orders = () => {
+const Orders = ({orders}) => {
     return(
-       <Order />
+        <div className="orders">
+            {
+                orders.map(order => (
+                    <p>test</p>
+                ))
+            }
+            <Order orders={orders}/>
+       </div>
     )
 }
 
