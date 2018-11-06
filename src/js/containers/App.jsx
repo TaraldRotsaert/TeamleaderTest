@@ -1,19 +1,28 @@
-import React from "react";
+import React, { Component } from 'react';
 import store from "../store/index.js";
 import Orders from "../components/Orders.jsx";
+import NotFound from "../components/NotFound.jsx";
 
 import { Route, Switch, Link} from 'react-router-dom';
 
-const App = () => {
-    const orders = store.getState().orders;
-    console.log(orders);
-    orders.forEach(order => console.log(order));
-    return(
+class App extends Component {
+
+    constructor(){
+        super();
+        const orders = store.getState().orders;
+        console.log(orders);
+    }
+
+    render(){
+        return(
         <section>
             <h2>Huidige orders:</h2>
-            <Orders orders={store.getState().orders}/>
+            <Switch>
+                <Route path='/' exact render={() => <Orders orders={store.getState().orders}/>} />
+            </Switch>
         </section>
-    )
+        );
+    }
 }
 
 export default App;

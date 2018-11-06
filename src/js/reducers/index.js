@@ -2,15 +2,13 @@ let orders = [];
 let products = [];
 let customers = [];
 
+
 const parseOrders = data => {
     data.forEach(order => {
         orders.push(order);
     })
-    console.log(orders);
-    orders.forEach(order => {
-        //console.log(order);
-    })
 }
+
 
 const parseProducts = data => {
     data.forEach(product => {
@@ -44,6 +42,8 @@ const init = () => {
     fetch('../../assets/data/orders.json')
         .then(r => r.json())
         .then(data => parseCustomers(data));
+
+    rootReducer();
 }   
 
 init();
