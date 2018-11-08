@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import store from "../store/index.js";
 import Orders from "../components/Orders.jsx";
 import NotFound from "../components/NotFound.jsx";
+import {fetchOrders} from "../actions/api/ordersActions.js";
 
 import { Route, Switch, Link} from 'react-router-dom';
 
@@ -11,6 +12,10 @@ class App extends Component {
         super();
         const orders = store.getState().orders;
         console.log(orders);
+    }
+
+    componentDidMount() {
+        this.props.fetchOrders();
     }
 
     render(){
