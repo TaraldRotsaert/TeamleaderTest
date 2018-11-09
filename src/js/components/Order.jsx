@@ -1,9 +1,9 @@
 import React from "react";
 
-const Order = ({orders}) => {
+const Order = ({order}) => {
     return(
         <div className="order">
-
+            <h2>Order number : {order.id}</h2>
         </div>
     )
 }

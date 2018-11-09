@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Orders from "../components/Orders.jsx";
 import NotFound from "../components/NotFound.jsx";
 import {fetchOrders} from "../actions/api/ordersActions.js";
+//import {fetchCustomers} from "../actions/api/customersActions.js";
 import { connect } from 'react-redux';
 
 import { Route, Switch, Link} from 'react-router-dom';
@@ -14,11 +15,12 @@ class App extends Component {
 
     componentDidMount() {
         this.props.dispatch(fetchOrders());
+        //this.props.dispatch(fetchCustomers());
     }
 
     render(){
         const {error, loading, orders} = this.props;
-        console.log(orders);
+        console.log(this.props);
         return(
         <section>
             <h2>Huidige orders:</h2>
