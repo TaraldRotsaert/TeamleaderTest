@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import store from "../store/index.js";
 import Orders from "../components/Orders.jsx";
 import NotFound from "../components/NotFound.jsx";
 import {fetchOrders} from "../actions/api/ordersActions.js";
+import { connect } from 'react-redux';
 
 import { Route, Switch, Link} from 'react-router-dom';
 
@@ -10,24 +10,30 @@ class App extends Component {
 
     constructor(){
         super();
-        const orders = store.getState().orders;
-        console.log(orders);
     }
 
     componentDidMount() {
-        this.props.fetchOrders();
+        this.props.dispatch(fetchOrders());
     }
 
     render(){
+        const {error, loading, orders} = this.props;
+        console.log(orders);
         return(
         <section>
             <h2>Huidige orders:</h2>
             <Switch>
-                <Route path='/' exact render={() => <Orders orders={store.getState().orders}/>} />
+                <Route path='/' exact render={() => <Orders orders={orders}/>} />
             </Switch>
         </section>
         );
     }
 }
 
-export default App;
+const mapStateToProps = state => ({
+    orders: state.orders.itemsOrders,
+    loading: state.orders.loading,
+    error: state.orders.error
+  });
+
+export default connect(mapStateToProps)(App);
