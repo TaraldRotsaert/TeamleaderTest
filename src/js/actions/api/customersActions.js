@@ -19,7 +19,7 @@ export const fetchCustomers = () => {
     type: FETCH_CUSTOMERS_BEGIN
   });
   
-  export const fetchCustomersSuccess = CUSTOMERS => {
+  export const fetchCustomersSuccess = CUSTOMERS => ({
     type: FETCH_CUSTOMERS_SUCCESS,
     payload: { CUSTOMERS }
   });
