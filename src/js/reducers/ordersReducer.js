@@ -2,8 +2,8 @@ import {FETCH_ORDERS_BEGIN, FETCH_ORDERS_SUCCESS, FETCH_ORDERS_FAILURE} from '..
 
 const initialState = {
     itemsOrders: [],
-    loading: false,
-    error: null
+    loadingOrders: false,
+    errorOrders: null
   };
 
   export default function ordersReducer(state = initialState, action) {
@@ -11,20 +11,20 @@ const initialState = {
       case FETCH_ORDERS_BEGIN:
         return {
           ...state,
-          loading: true,
+          loadingOrders: true,
           error: null
         }
       case FETCH_ORDERS_SUCCESS:
         return {
           ...state,
-          loading: false,
+          loadingOrders: false,
           itemsOrders: action.payload.ORDERS
         }
       case FETCH_ORDERS_FAILURE:
         return {
           ...state,
-          loading: true,
-          error: action.payload.error,
+          loadingOrders: true,
+          errorOrders: action.payload.errorOrders,
           itemsOrders: []
         }
       default:

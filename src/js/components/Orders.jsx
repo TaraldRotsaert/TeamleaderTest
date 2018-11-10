@@ -1,15 +1,16 @@
 import React from "react";
-import Order from "./Order.jsx";
+import { Link } from "react-router-dom";
 
 const Orders = ({orders}) => {
-        orders.forEach(order => {
-            console.log(order.total);
-        })
         return(
             <ul className="order">
                 {
                     orders.map((order) => (
-                        <Order key={order.id} order={order}/>
+                        <li key={order.id}>
+                        <Link className="order-link" to={`order/${order.id}`}>
+                            {order.id}
+                        </Link>
+                        </li>
                     ))
                 }
             </ul>

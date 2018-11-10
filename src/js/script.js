@@ -8,11 +8,11 @@ import store from './store/index.js';
 {
     const init = () => {
         ReactDOM.render(
-            <BrowserRouter>
             <Provider store={store}>
+            <BrowserRouter>
                 <App />
-            </Provider>
             </BrowserRouter>
+            </Provider>
             , document.body.querySelector(`.react`)
         );
     }
