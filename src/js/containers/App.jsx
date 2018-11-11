@@ -23,6 +23,13 @@ class App extends Component {
 
     render(){
         const {orders, customers, products} = this.props;
+        orders.forEach(order => {
+            customers.forEach(customer => {
+                if(order.customerId === customer.id){
+                    console.log(`match: id = ${customer.id}`);
+                }
+            })
+        })
         return(
         <section>
             <h2>Huidige orders:</h2>
@@ -31,7 +38,7 @@ class App extends Component {
 
                 <Route path='/order/:id' render={({ match }) => {
                     const id = match.params.id;
-                    return orders[id]?<OrderDetail key={id} id={id} order={orders[id]}/>:<NotFound />
+                    return orders[id]?<OrderDetail key={id} id={id} order={orders[id]} customers={customers} products={products}/>:<NotFound />
                 }} />
 
                 <Route component={NotFound}/>
