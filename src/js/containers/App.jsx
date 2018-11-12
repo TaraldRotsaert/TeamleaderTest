@@ -23,6 +23,7 @@ class App extends Component {
 
     render(){
         const {orders, customers, products} = this.props;
+        /*
         orders.forEach(order => {
             customers.forEach(customer => {
                 if(order.customerId === customer.id){
@@ -30,6 +31,8 @@ class App extends Component {
                 }
             })
         })
+        console.log(orders[1]);
+        */
         return(
         <section>
             <h2>Huidige orders:</h2>
@@ -37,7 +40,8 @@ class App extends Component {
                 <Route path='/' exact render={() => <Orders orders={orders} customers={customers} products={products}/>} />
 
                 <Route path='/order/:id' render={({ match }) => {
-                    const id = match.params.id;
+                    let id = match.params.id;
+                    id -=1;
                     return orders[id]?<OrderDetail key={id} id={id} order={orders[id]} customers={customers} products={products}/>:<NotFound />
                 }} />
 
