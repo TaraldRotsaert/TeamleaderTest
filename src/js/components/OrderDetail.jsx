@@ -28,7 +28,7 @@ const OrderDetail = ({order, customers, products}) => {
     return(
         <div className="orders-container">
             <OrderTitle title={order.id} name={customer.name}/>
-            <Products productsOrder={productsOrder} customer={customer} items={items}/>
+            <Products productsOrder={productsOrder} items={items}/>
         </div>
     )
 }
