@@ -21,8 +21,8 @@ const OrderDetail = ({order, customers, products}) => {
         })
     })
 
-    console.log(productsOrder);
-    console.log(items);
+    //console.log(productsOrder);
+    //console.log(items);
 
 
     return(

@@ -8,7 +8,7 @@ const Orders = ({orders}) => {
                     orders.map((order) => (
                         <li key={order.id}>
                         <Link className="order-link" to={`order/${order.id}`}>
-                            {order.id}
+                            Order nr: {order.id}
                         </Link>
                         </li>
                     ))
