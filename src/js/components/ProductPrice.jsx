@@ -1,8 +1,9 @@
 import React from "react";
 
 const ProductPrice = ({price, quantity}) => {
+    const total = (price * quantity).toFixed(2);
     return(
-        <p></p>
+        <p>Totaal: {total}</p>
     )
 }
 

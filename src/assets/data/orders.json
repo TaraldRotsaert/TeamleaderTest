@@ -6,7 +6,7 @@
           {
             "productId": "B102",
             "quantity": "10",
-            "unit-price": "4.99",
+            "unitPrice": "4.99",
             "total": "49.90"
           }
         ],
@@ -19,7 +19,7 @@
           {
             "productId": "B102",
             "quantity": "5",
-            "unit-price": "4.99",
+            "unitPrice": "4.99",
             "total": "24.95"
           }
         ],
@@ -32,13 +32,13 @@
           {
             "productId": "A101",
             "quantity": "2",
-            "unit-price": "9.75",
+            "unitPrice": "9.75",
             "total": "19.50"
           },
           {
             "productId": "A102",
             "quantity": "1",
-            "unit-price": "49.50",
+            "unitPrice": "49.50",
             "total": "49.50"
           }
         ],

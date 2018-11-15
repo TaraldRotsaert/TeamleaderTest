@@ -2,8 +2,6 @@ import React from "react";
 import ProductItem from './ProductItem.jsx';
 
 const Products = ({productsOrder, items}) => {
-    console.log(productsOrder);
-    console.log(items);
     return(
         <div className="products-container">
             <h4>Products:</h4>

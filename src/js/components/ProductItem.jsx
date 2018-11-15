@@ -1,4 +1,6 @@
 import React from "react";
+import ProductPrice from './ProductPrice.jsx';
+//import ProductsTotal from './ProductsTotal.jsx';
 
 const ProductItem = ({item, productsOrder}) => {
     return(
@@ -6,12 +8,11 @@ const ProductItem = ({item, productsOrder}) => {
             {
                 productsOrder.map(product => {
                     if(product.id === item.productId){
-                        return <p className="product-item-title">{product.id}</p>
+                        return <p className="product-item-title" key={product.id}>{product.description}</p>
                     }
                 })
             }
-            <p className="product-item-title"></p>
-            <p className="product-item-quantity">{item.quantity}</p>
+            <ProductPrice price={item.unitPrice} quantity={item.quantity}/>
         </div>
     )
 }
