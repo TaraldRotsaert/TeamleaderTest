@@ -6,7 +6,7 @@ const ProductsTotal = ({total}) => {
     const sum = total.reduce(reducer);
 
     return(
-        <p>Totaal: {sum}</p>
+        <p>Totaal: € {sum}</p>
     )
 }
 
