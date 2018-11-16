@@ -12,7 +12,7 @@
   },
   "scripts": {
     "development": "NODE_ENV=development  webpack-dev-server --open",
-    "production": "rm -rf dist && NODE_ENV=production webpack -p"
+    "production": "rm -rf dist/ && npm run copydist && NODE_ENV=production webpack -p"
   },
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
