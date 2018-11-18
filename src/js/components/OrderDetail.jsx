@@ -2,6 +2,7 @@ import React from 'react';
 import OrderTitle from './OrderTitle.jsx';
 import Products from './Products.jsx';
 import ProductsTotal from './ProductsTotal.jsx';
+import DeleteOrder from './DeleteOrder.jsx';
 
 const OrderDetail = ({order, customers, products}) => {
     let customer;
@@ -32,6 +33,7 @@ const OrderDetail = ({order, customers, products}) => {
             <OrderTitle title={order.id} name={customer.name}/>
             <Products productsOrder={productsOrder} items={items}/>
             <ProductsTotal total={total}/>
+            <DeleteOrder />
         </div>
     )
 }
