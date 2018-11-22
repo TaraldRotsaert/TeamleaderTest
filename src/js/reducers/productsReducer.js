@@ -1,4 +1,4 @@
-import {FETCH_PRODUCTS_SUCCESS} from '../actions/api/productsActions.js';
+import {FETCH_PRODUCTS_SUCCESS} from '../actions/productsActions.js';
 
 
 const initialState = {

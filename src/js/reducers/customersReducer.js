@@ -1,4 +1,4 @@
-import {FETCH_CUSTOMERS_SUCCESS} from '../actions/api/customersActions.js';
+import {FETCH_CUSTOMERS_SUCCESS} from '../actions/customersActions.js';
 
 const initialState = {
     itemsCustomers: []

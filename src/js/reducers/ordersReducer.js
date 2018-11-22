@@ -1,4 +1,4 @@
-import {FETCH_ORDERS_SUCCESS} from '../actions/api/ordersActions.js';
+import {FETCH_ORDERS_SUCCESS} from '../actions/ordersActions.js';
 
 const initialState = {
     itemsOrders: []
