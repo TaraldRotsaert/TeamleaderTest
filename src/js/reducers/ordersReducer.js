@@ -1,4 +1,4 @@
-import {FETCH_ORDERS_SUCCESS} from '../actions/ordersActions.js';
+import {FETCH_ORDERS_SUCCESS, DELETE_ORDER} from '../actions/ordersActions.js';
 
 const initialState = {
     itemsOrders: []
@@ -10,6 +10,10 @@ const initialState = {
         return {
           ...state,
           itemsOrders: action.payload.ORDERS
+        }
+        case DELETE_ORDER: 
+        return {
+          ...state
         }
       default:
         return state;

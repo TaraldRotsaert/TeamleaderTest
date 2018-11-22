@@ -3,7 +3,7 @@ import ProductPrice from './ProductPrice.jsx';
 import ProductAmount from "./ProductAmount.jsx";
 import ProductCost from "./ProductCost.jsx";
 
-const ProductItem = ({item, productsOrder}) => {
+const ProductItem = ({orderId, item, productsOrder}) => {
     return(
         <div>
             {
@@ -14,7 +14,7 @@ const ProductItem = ({item, productsOrder}) => {
                 })
             }
             <ProductCost price={item.unitPrice}/>
-            <ProductAmount quantity={item.quantity} />
+            <ProductAmount item={item} orderId={orderId}/>
             <ProductPrice price={item.unitPrice} quantity={item.quantity}/>
         </div>
     )

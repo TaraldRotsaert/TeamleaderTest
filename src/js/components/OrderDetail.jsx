@@ -1,8 +1,8 @@
 import React from 'react';
 import OrderTitle from './OrderTitle.jsx';
-import Products from './Products.jsx';
 import ProductsTotal from './ProductsTotal.jsx';
-import DeleteOrder from './DeleteOrder.jsx';
+import ProductItem from './ProductItem.jsx';
+import AddProduct from './AddProduct.jsx';
 
 const OrderDetail = ({order, customers, products}) => {
     let customer;
@@ -31,9 +31,16 @@ const OrderDetail = ({order, customers, products}) => {
     return(
         <div className="orders-container">
             <OrderTitle title={order.id} name={customer.name}/>
-            <Products productsOrder={productsOrder} items={items}/>
+            <div className="products-container">
+                <h4>Products</ h4>
+                {
+                  items.map(item => (
+                    <ProductItem orderId={order.id} key={item.productId} item={item} productsOrder={productsOrder} />
+                ))  
+                }
+            </div>
             <ProductsTotal total={total}/>
-            <DeleteOrder />
+            <AddProduct orderId={order.id} products={products} />
         </div>
     )
 }

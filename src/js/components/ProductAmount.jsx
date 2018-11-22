@@ -1,7 +1,17 @@
 import React from "react";
+import {connect} from 'react-redux';
 
-const ProductAmount = ({quantity}) => {
-    return <p className="product-amount">Hoeveelheid: {quantity}</p>
+const ProductAmount = ({item, orderId}) => {
+    const handleChange = (e) => {
+        //console.log(e.currentTarget.value);
+    }
+    console.log(orderId);
+    return (
+        <div>
+            <input type="number" step="1" value={item.quantity} onChange={e => handleChange(e)}/>
+            <p className="product-amount">Hoeveelheid: {item.quantity}</p>
+        </div>
+    )
 }
 
-export default ProductAmount;
+export default connect()(ProductAmount);
