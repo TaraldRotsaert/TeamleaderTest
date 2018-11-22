@@ -23,16 +23,6 @@ class App extends Component {
 
     render(){
         const {orders, customers, products} = this.props;
-        /*
-        orders.forEach(order => {
-            customers.forEach(customer => {
-                if(order.customerId === customer.id){
-                    console.log(`match: id = ${customer.id}`);
-                }
-            })
-        })
-        console.log(orders[1]);
-        */
         return(
         <section>
             <h2>Huidige orders:</h2>
