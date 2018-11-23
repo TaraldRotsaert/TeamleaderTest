@@ -1,14 +1,12 @@
-import React from "react";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-const PlaceOrder = ({orderId, total}) => {
-    const handleClickButton = (e) => {
-        //e.preventDeafault();
-        console.log(`Order nr: ${orderId} is geplaatst en kost: €${total}`);
+class PlaceOrder extends Component {
+    render(){
+        return(
+            <button onClick={() => this.props.dispatch({type: 'DELETE_ORDER', id: this.props.orderId})}>Place Order!</button>
+        )
     }
-
-    return(
-        <button onClick={e => handleClickButton(e)}>Place Order!</button>
-    )
 }
 
-export default PlaceOrder;
+export default connect()(PlaceOrder);

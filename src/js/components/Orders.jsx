@@ -13,7 +13,7 @@ const Orders = ({orders}) => {
                         </Link>
                         <PlaceOrder orderId={order.id} total={order.total}/>
                         </li>
-                    ))
+                    ))           
                 }
             </ul>
         )
