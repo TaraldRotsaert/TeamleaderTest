@@ -3,9 +3,10 @@ import {connect} from 'react-redux';
 
 const ProductAmount = ({item, orderId}) => {
     const handleChange = (e) => {
-        //console.log(e.currentTarget.value);
+        e.preventDefault();
+        const value = e.currentTarget.value;
+        
     }
-    console.log(orderId);
     return (
         <div>
             <input type="number" step="1" value={item.quantity} onChange={e => handleChange(e)}/>

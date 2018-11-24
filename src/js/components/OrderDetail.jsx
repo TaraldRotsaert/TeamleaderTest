@@ -9,7 +9,6 @@ const OrderDetail = ({order, customers, products}) => {
     let items = order.items;
     let productsOrder = [];
     let total = [];
-
     customers.forEach(data => {
         if(order.customerId === data.id){
             customer = data;
