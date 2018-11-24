@@ -12,8 +12,8 @@ const initialState = {
           itemsOrders: action.payload.ORDERS
         }
         case DELETE_ORDER: 
-          console.log(action.id);
-          return state.itemsOrders.filter((order) => order.id === action.id)
+          console.log(state.itemsOrders.filter((order) => order.id !== action.id));
+          return state.itemsOrders.filter((order) => order.id !== action.id)
         case ADD_TO_ORDER:
           return state.itemsOrders.push(item);
       default:
