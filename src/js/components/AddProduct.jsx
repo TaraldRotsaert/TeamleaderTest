@@ -23,6 +23,7 @@ class AddProduct extends Component {
     }
     render(){
         const products = this.props.products;
+        console.log(products);
         return(
             <div>
                 <h5>Order een nieuw product:</h5>
