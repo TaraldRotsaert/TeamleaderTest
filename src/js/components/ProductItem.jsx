@@ -2,6 +2,7 @@ import React from "react";
 import ProductPrice from './ProductPrice.jsx';
 import ProductAmount from "./ProductAmount.jsx";
 import ProductCost from "./ProductCost.jsx";
+import DeleteProduct from "./DeleteProduct.jsx";
 
 const ProductItem = ({orderId, item, productsOrder}) => {
     return(
@@ -13,6 +14,7 @@ const ProductItem = ({orderId, item, productsOrder}) => {
                     }
                 })
             }
+            <DeleteProduct orderId={orderId} productId={item.productId}/>
             <ProductCost price={item.unitPrice}/>
             <ProductAmount item={item} orderId={orderId}/>
             <ProductPrice price={item.unitPrice} quantity={item.quantity}/>

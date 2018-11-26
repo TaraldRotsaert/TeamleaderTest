@@ -26,7 +26,6 @@ const OrderDetail = ({order, customers, products}) => {
     items.forEach(item => {
         total.push(item.total);
     })
-
     return(
         <div className="orders-container">
             <OrderTitle title={order.id} name={customer.name}/>

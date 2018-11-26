@@ -17,13 +17,12 @@ class AddProduct extends Component {
         }
         this.props.dispatch({
             type: 'ADD_TO_ORDER',
-            id: this.props.orderId,
-            data: data
+            data: data,
+            orderId: this.props.orderId
         })
     }
     render(){
         const products = this.props.products;
-        console.log(products);
         return(
             <div>
                 <h5>Order een nieuw product:</h5>

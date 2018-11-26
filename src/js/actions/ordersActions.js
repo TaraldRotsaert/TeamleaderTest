@@ -1,6 +1,7 @@
 export const FETCH_ORDERS_SUCCESS = 'FETCH_ORDERS_SUCCESS';
 export const DELETE_ORDER = 'DELETE_ORDER';
 export const ADD_TO_ORDER = 'ADD_TO_ORDER';
+export const DELETE_PRODUCT = 'DELETE_PRODUCT';
 
 export const fetchOrders = () => {
   return (dispatch) => {
@@ -26,6 +27,11 @@ export const updateOrder = ORDER => ({
 export const AddToOrder = item => ({
   type: ADD_TO_ORDER,
   payload: item
+})
+
+export const DeleteProduct = product => ({
+  type: DELETE_PRODUCT,
+  payload: product
 })
 
 export const DeleteOrder = order => ({
