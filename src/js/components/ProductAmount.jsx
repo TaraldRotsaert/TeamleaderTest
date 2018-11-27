@@ -1,12 +1,6 @@
 import React from "react";
-import {connect} from 'react-redux';
 
-const ProductAmount = ({item, orderId}) => {
-    const handleChange = (e) => {
-        e.preventDefault();
-        const value = e.currentTarget.value;
-        
-    }
+const ProductAmount = ({item}) => {
     return (
         <div>
             <p className="product-amount">Hoeveelheid: {item.quantity}</p>
@@ -14,4 +8,4 @@ const ProductAmount = ({item, orderId}) => {
     )
 }
 
-export default connect()(ProductAmount);
+export default ProductAmount;

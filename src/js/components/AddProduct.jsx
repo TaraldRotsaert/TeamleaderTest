@@ -18,7 +18,8 @@ class AddProduct extends Component {
         this.props.dispatch({
             type: 'ADD_TO_ORDER',
             data: data,
-            orderId: this.props.orderId
+            orderId: this.props.orderId,
+            productId: productId
         })
     }
     render(){
