@@ -16,7 +16,7 @@ const ProductItem = ({orderId, item, productsOrder}) => {
             }
             <DeleteProduct orderId={orderId} productId={item.productId}/>
             <ProductCost price={item.unitPrice}/>
-            <ProductAmount item={item} orderId={orderId}/>
+            <ProductAmount item={item} orderId={orderId} />
             <ProductPrice price={item.unitPrice} quantity={item.quantity}/>
         </div>
     )

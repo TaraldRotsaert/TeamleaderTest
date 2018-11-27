@@ -25,6 +25,7 @@ class App extends Component {
         const {orders, customers, products} = this.props;
         return(
         <section>
+            <h1 className="heading"><Link to="/">Home</Link></h1>
             <h2>Huidige orders:</h2>
             <Switch>
                 <Route path='/' exact render={() => <Orders orders={orders} customers={customers} products={products}/>} />

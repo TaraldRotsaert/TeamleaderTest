@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import PlaceOrder from "./PlaceOrder.jsx";
 
 const Orders = ({orders}) => {
+    console.log(orders);
         return(
             <ul className="order">
                 {

@@ -9,7 +9,6 @@ const ProductAmount = ({item, orderId}) => {
     }
     return (
         <div>
-            <input type="number" step="1" value={item.quantity} onChange={e => handleChange(e)}/>
             <p className="product-amount">Hoeveelheid: {item.quantity}</p>
         </div>
     )

@@ -17,16 +17,17 @@ const initialState = {
             itemsOrders: state.itemsOrders.filter((order) => order.id !== action.id)
           }
         case ADD_TO_ORDER:
-        console.log(action.orderId);
-        console.log(action.data);
+        //console.log(state.itemsOrders[action.orderId -= 1]);
           return{
             ...state,
             itemsOrders: {
               ...state.itemsOrders,
-              items: state.itemsOrders[0].items.push(action.data)
+              items: state.itemsOrders[action.orderId -= 1].items.push(action.data)
             }
           }
         case DELETE_PRODUCT: 
+        /*
+        console.log(state);
         state.itemsOrders.map(item => {
           if(item.id === action.orderId) {
             item.items.map(product => {
@@ -36,19 +37,10 @@ const initialState = {
               }
             })
           }
-        })
+        })*/
         return {
           ...state,
-          itemsOrders: state.itemsOrders.map(item => {
-            if(item.id === action.orderId) {
-              item.items.map(product => {
-                return{
-                  ...product,
-                  product: product.quantity -=1
-                }
-              })
-            }
-          })
+          
         }
       default:
         return state;
