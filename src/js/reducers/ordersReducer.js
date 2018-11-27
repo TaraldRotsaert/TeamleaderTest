@@ -17,14 +17,14 @@ const initialState = {
             itemsOrders: state.itemsOrders.filter((order) => order.id !== action.id)
           }
         case ADD_TO_ORDER:
-      
+        //state.itemsOrders[action.orderId -= 1].items.push(action.data)
           state.itemsOrders.map(item => {
             if(item.id === action.orderId) {
               item.items.map(product => {
-                if(product.productId !== action.productId){
-                  state.itemsOrders[action.orderId -= 1].items.push(action.data)
-                }else{
+                if(product.productId === action.productId){
                   product.quantity ++;
+                }else{
+                  state.itemsOrders[action.orderId -= 1].items.push(action.data)
                 }
               })
             }
@@ -38,12 +38,12 @@ const initialState = {
         case DELETE_PRODUCT: 
         state.itemsOrders.map(item => {
           if(item.id === action.orderId) {
-            item.items.map(product => {
+            item.items.map((product, index) => {
               if(product.productId === action.productId){
                 product.quantity -=1;
                 if(product.quantity === 0) {
-                  //console.log(state.itemsOrders[action.orderId -= 1].items);
-                  //product.remove();
+                  product.quantity = 0;
+                  state.itemsOrders[action.orderId -= 1].items.splice(index);
                 }
               }
             })
