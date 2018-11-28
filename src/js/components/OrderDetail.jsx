@@ -26,18 +26,26 @@ const OrderDetail = ({order, customers, products}) => {
     items.forEach(item => {
         total.push(item.total);
     })
+
+    console.log(items);
     return(
         <div className="orders-container">
             <OrderTitle title={order.id} name={customer.name}/>
-            <div className="products-container">
-                <h4>Products</ h4>
-                {
-                  items.map(item => (
-                    <ProductItem orderId={order.id} key={item.productId} item={item} productsOrder={productsOrder} />
-                ))  
-                }
-            </div>
-            <ProductsTotal total={total}/>
+            {items.length !==0 ? (
+                <div className="products-container">
+                    <h4>Products</ h4>
+                    {
+                      items.map(item => (
+                        <ProductItem orderId={order.id} key={item.productId} item={item} productsOrder={productsOrder} />
+                    ))  
+                    }
+                <ProductsTotal total={total}/>
+                </div>
+            ):(
+                <div>
+                    <p>Er zijn geen products, voeg er wat toe.</p>
+                </div>
+            )}
             <AddProduct orderId={order.id} products={products} />
         </div>
     )

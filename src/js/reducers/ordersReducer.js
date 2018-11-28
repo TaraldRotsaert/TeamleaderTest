@@ -1,7 +1,7 @@
 import {FETCH_ORDERS_SUCCESS, DELETE_ORDER, ADD_TO_ORDER, DELETE_PRODUCT} from '../actions/ordersActions.js';
 
 const initialState = {
-    itemsOrders: []
+    orders: []
   };
 
   export default function ordersReducer(state = initialState, action) {
@@ -9,41 +9,41 @@ const initialState = {
       case FETCH_ORDERS_SUCCESS:
         return {
           ...state,
-          itemsOrders: action.payload.ORDERS
+          orders: action.payload.ORDERS
         }
         case DELETE_ORDER: 
           return {
             ...state,
-            itemsOrders: state.itemsOrders.filter((order) => order.id !== action.id)
+            orders: state.orders.filter((order) => order.id !== action.id)
           }
         case ADD_TO_ORDER:
-        //state.itemsOrders[action.orderId -= 1].items.push(action.data)
-          state.itemsOrders.map(item => {
-            if(item.id === action.orderId) {
-              item.items.map(product => {
+          state.orders.map(order => {
+            if(order.id === action.orderId) {
+              order.items.map(product => {
                 if(product.productId === action.productId){
-                  product.quantity ++;
+                  console.log(product.quantity)
+                  product.quantity = parseInt(product.quantity, 10) + 1;
                 }else{
-                  state.itemsOrders[action.orderId -= 1].items.push(action.data)
+                  state.orders[action.orderId -= 1].items.push(action.data)
                 }
               })
             }
           })
           return{
             ...state,
-            itemsOrders: [
-              ...state.itemsOrders,
+            orders: [
+              ...state.orders,
             ]
           }
         case DELETE_PRODUCT: 
-        state.itemsOrders.map(item => {
+        state.orders.map(item => {
           if(item.id === action.orderId) {
             item.items.map((product, index) => {
               if(product.productId === action.productId){
                 product.quantity -=1;
                 if(product.quantity === 0) {
                   product.quantity = 0;
-                  state.itemsOrders[action.orderId -= 1].items.splice(index);
+                  state.orders[action.orderId -= 1].items.splice(index);
                 }
               }
             })
@@ -51,8 +51,8 @@ const initialState = {
         })
         return{
           ...state,
-          itemsOrders: [
-            ...state.itemsOrders,
+          orders: [
+            ...state.orders,
           ]
         }
       default:

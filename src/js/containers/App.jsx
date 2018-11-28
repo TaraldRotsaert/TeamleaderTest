@@ -44,7 +44,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-    orders: state.orders.itemsOrders,
+    orders: state.orders.orders,
     customers: state.customers.itemsCustomers,
     products: state.products.itemsProducts
   });
