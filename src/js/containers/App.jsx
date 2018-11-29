@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Orders from "../components/Orders.jsx";
-import NotFound from "../components/NotFound.jsx";
-import OrderDetail from "../components/OrderDetail.jsx";
-import {fetchOrders} from "../actions/ordersActions.js";
-import {fetchCustomers} from "../actions/customersActions.js";
-import {fetchProducts} from "../actions/productsActions.js";
+import Orders from '../components/Orders.jsx'
+import NotFound from '../components/NotFound.jsx';
+import OrderDetail from '../components/OrderDetail.jsx';
+import {fetchOrders} from '../actions/ordersActions.js';
+import {fetchCustomers} from '../actions/customersActions.js';
+import {fetchProducts} from '../actions/productsActions.js';
 import { connect } from 'react-redux';
 
 import { Route, Switch, Link} from 'react-router-dom';
@@ -45,8 +45,8 @@ class App extends Component {
 
 const mapStateToProps = state => ({
     orders: state.orders.orders,
-    customers: state.customers.itemsCustomers,
-    products: state.products.itemsProducts
+    customers: state.customers.customers,
+    products: state.products.products
   });
 
 export default connect(mapStateToProps)(App);

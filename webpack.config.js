@@ -62,38 +62,3 @@ module.exports = env => {
   }
   return merge(commonConfig, developmentConfig);
 };
-
-/*
-module.exports = {
-  entry: './src/js/script.js',
-
-  output: {
-    path: path.dist,
-    filename: `js/script.[hash].js`
-  },
-
-  module: {
-    rules: [
-      {
-        test: /\.js/,
-        use: [ 'babel-loader?cacheDirectory' ],
-        exclude: /node_modules/,
-      },
-    ],
-  },
-
-  devtool: 'eval-source-map',
-
-  devServer: {
-    port: 3000,
-    stats: 'normal',
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      hash: true,
-      template: './src/index.html',
-    }),
-  ],
-};
-*/

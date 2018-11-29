@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import PlaceOrder from "./PlaceOrder.jsx";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import PlaceOrder from './PlaceOrder.jsx';
 
 const Orders = ({orders}) => {
         return(

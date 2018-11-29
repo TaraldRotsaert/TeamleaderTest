@@ -1,7 +1,7 @@
 import {FETCH_CUSTOMERS_SUCCESS} from '../actions/customersActions.js';
 
 const initialState = {
-    itemsCustomers: []
+    customers: []
   };
 
   export default function customersReducer(state = initialState, action) {
@@ -9,7 +9,7 @@ const initialState = {
       case FETCH_CUSTOMERS_SUCCESS:
         return {
           ...state,
-          itemsCustomers: action.payload.CUSTOMERS
+          customers: action.payload.CUSTOMERS
         }
       default:
         return state;

@@ -2,7 +2,7 @@ import {FETCH_PRODUCTS_SUCCESS} from '../actions/productsActions.js';
 
 
 const initialState = {
-    itemsProducts: [],
+    products: [],
   };
 
   export default function productsReducer(state = initialState, action) {
@@ -10,7 +10,7 @@ const initialState = {
       case FETCH_PRODUCTS_SUCCESS:
         return {
           ...state,
-          itemsProducts: action.payload.PRODUCTS
+          products: action.payload.PRODUCTS
         }
       default:
         return state;

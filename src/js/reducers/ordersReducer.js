@@ -16,15 +16,16 @@ const initialState = {
             ...state,
             orders: state.orders.filter((order) => order.id !== action.id)
           }
+          
         case ADD_TO_ORDER:
           state.orders.map(order => {
             if(order.id === action.orderId) {
-              order.items.map(product => {
-                if(product.productId === action.productId){
-                  console.log(product.quantity)
-                  product.quantity = parseInt(product.quantity, 10) + 1;
-                }else{
-                  state.orders[action.orderId -= 1].items.push(action.data)
+              order.items.map(item => {
+                if(item.productId === action.productId){
+                  item.quantity ++;
+                }
+                if(item.productId !== action.productId) {
+                  state.orders[action.orderId -=1].items.push(action.data);
                 }
               })
             }
