@@ -1,10 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import ProductPrice from './price.js';
 import ProductAmount from './amount.js';
 import ProductCost from './cost.js';
 import DeleteProduct from './delete.js';
 
 const ProductItem = ({orderId, item, productsOrder}) => {
+    
     return(
         <div>
             {
@@ -20,6 +23,12 @@ const ProductItem = ({orderId, item, productsOrder}) => {
             <ProductPrice price={item.unitPrice} quantity={item.quantity}/>
         </div>
     )
+}
+
+ProductItem.propTypes = {
+    item: PropTypes.object.isRequired,
+    orderId: PropTypes.string.isRequired,
+    productsOrder: PropTypes.array.isRequired
 }
 
 export default ProductItem;

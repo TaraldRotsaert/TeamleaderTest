@@ -24,17 +24,14 @@ export const updateOrder = ORDER => ({
   payload: {ORDER}
 })
 
-export const AddToOrder = item => ({
-  type: ADD_TO_ORDER,
-  payload: item
+export const AddToOrder = () => ({
+  type: ADD_TO_ORDER
 })
 
-export const DeleteProduct = product => ({
-  type: DELETE_PRODUCT,
-  payload: product
+export const DeleteProduct = () => ({
+  type: DELETE_PRODUCT
 })
 
-export const DeleteOrder = order => ({
-  type: DELETE_ORDER,
-  name: order
+export const DeleteOrder = () => ({
+  type: DELETE_ORDER
 })

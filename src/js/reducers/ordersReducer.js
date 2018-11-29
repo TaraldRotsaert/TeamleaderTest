@@ -11,51 +11,62 @@ const initialState = {
           ...state,
           orders: action.payload.ORDERS
         }
+
         case DELETE_ORDER: 
           return {
             ...state,
             orders: state.orders.filter((order) => order.id !== action.id)
           }
-          
+
         case ADD_TO_ORDER:
-          state.orders.map(order => {
+          state.orders.map((order, index) => {
             if(order.id === action.orderId) {
-              order.items.map(item => {
-                if(item.productId === action.productId){
-                  item.quantity ++;
-                }
-                if(item.productId !== action.productId) {
-                  state.orders[action.orderId -=1].items.push(action.data);
-                }
-              })
+              if(order.items.length !== 0){
+                order.items.map(item => {
+                  if(item.productId !== action.productId){
+                    state.orders[index].items.push(action.data);
+                  }
+                  
+                  if(item.productId === action.productId){
+                    item.quantity ++;
+                  }
+                })
+              }
+              if(order.items.length === 0){
+                state.orders[index].items.push(action.data);
+              }
             }
           })
+
           return{
             ...state,
             orders: [
               ...state.orders,
             ]
           }
+
         case DELETE_PRODUCT: 
-        state.orders.map(item => {
-          if(item.id === action.orderId) {
-            item.items.map((product, index) => {
-              if(product.productId === action.productId){
-                product.quantity -=1;
-                if(product.quantity === 0) {
-                  product.quantity = 0;
-                  state.orders[action.orderId -= 1].items.splice(index);
+          state.orders.map((order, index) => {
+            if(order.id === action.orderId) {
+              order.items.map((product, id) => {
+
+                if(product.productId === action.productId){
+                  product.quantity --;
+                  if(product.quantity === 0) {
+                    product.quantity = 0;
+                    state.orders[index].items.splice(id, 1);
+                  }
                 }
-              }
-            })
+              })
+            }
+          })
+
+          return{
+            ...state,
+            orders: [
+              ...state.orders,
+            ]
           }
-        })
-        return{
-          ...state,
-          orders: [
-            ...state.orders,
-          ]
-        }
       default:
         return state;
     }

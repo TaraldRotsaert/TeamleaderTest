@@ -9,9 +9,9 @@ import store from './store/index.js';
     const init = () => {
         ReactDOM.render(
             <Provider store={store}>
-            <Router>
-                <Route component ={App} />
-            </Router>
+                <Router>
+                    <Route component ={App} />
+                </Router>
             </Provider>
             , document.body.querySelector(`.react`)
         );

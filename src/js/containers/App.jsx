@@ -6,6 +6,7 @@ import {fetchOrders} from '../actions/ordersActions.js';
 import {fetchCustomers} from '../actions/customersActions.js';
 import {fetchProducts} from '../actions/productsActions.js';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 import { Route, Switch, Link} from 'react-router-dom';
 
@@ -48,5 +49,11 @@ const mapStateToProps = state => ({
     customers: state.customers.customers,
     products: state.products.products
   });
+
+  App.propTypes = {
+    orders: PropTypes.array.isRequired,
+    customers: PropTypes.array.isRequired,
+    products: PropTypes.array.isRequired,
+}
 
 export default connect(mapStateToProps)(App);

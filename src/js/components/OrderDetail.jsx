@@ -3,12 +3,15 @@ import OrderTitle from './OrderTitle.jsx';
 import ProductsTotal from './Products/total';
 import ProductItem from './Products/item';
 import AddProduct from './Products/add';
+import PropTypes from 'prop-types';
+import OrdersTitle from './OrderTitle.jsx';
 
 const OrderDetail = ({order, customers, products}) => {
     let customer;
     let items = order.items;
     let productsOrder = [];
     let total = [];
+
     customers.forEach(data => {
         if(order.customerId === data.id){
             customer = data;
@@ -27,10 +30,9 @@ const OrderDetail = ({order, customers, products}) => {
         total.push(item.total);
     })
 
-    console.log(products);
     return(
         <div className="orders-container">
-            <OrderTitle title={order.id} name={customer.name}/>
+            <OrdersTitle title={order.id} name={customer.name}/>
             {items.length !==0 ? (
                 <div className="products-container">
                     <h4>Products</ h4>
@@ -49,6 +51,12 @@ const OrderDetail = ({order, customers, products}) => {
             <AddProduct products={products} orderId={order.id}/>
         </div>
     )
+}
+
+OrderDetail.propTypes = {
+    order: PropTypes.object.isRequired,
+    customers: PropTypes.array.isRequired,
+    products: PropTypes.array.isRequired
 }
 
 export default OrderDetail;
